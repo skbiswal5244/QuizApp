@@ -6,12 +6,16 @@ import { Table, TableRow, TableCell } from "@/components/ui/table";
 import { motion } from "framer-motion";
 
 export default function QuizContestApp() {
-  const [participants, setParticipants] = useState(0);
+  const [participants, setParticipants] = useState(3);
   const [entryFee, setEntryFee] = useState(20);
   const [winnerPrize, setWinnerPrize] = useState(150);
   const [runnerUpPrize, setRunnerUpPrize] = useState(50);
   const [profit, setProfit] = useState(0);
-  const [leaderboard, setLeaderboard] = useState([]);
+  const [leaderboard, setLeaderboard] = useState([
+    { name: "Alice", score: 100 },
+    { name: "Bob", score: 80 },
+    { name: "Charlie", score: 60 },
+  ]);
   const [paymentStatus, setPaymentStatus] = useState(false);
 
   const calculateProfit = () => {
